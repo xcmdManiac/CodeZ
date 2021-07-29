@@ -35,11 +35,17 @@ e = tk.Entry(window, text="Type something here:", fg="black", width=50, bg="gray
 e.grid(columnspan=12, column=0, row=1)
 button = tk.Button(window, text="DECODE", fg="Blue", font="Arial", padx=50, pady=3)
 button.grid(columnspan=12, column=0, row=3)
-text3 = tk.Label(window,text="OUTPUT:", font="Raleway", bg="#32a893")
-text3.grid(column=6, row=4)
 def ENCODEclicked():
-    text3 = tk.Label(window,text="OUTPUT: Hi", font="Raleway", bg="#32a893")
-    text3.grid(column=6, row=4)
+    Outpute = e.get()
+    print(Outpute)
+    file = open("EncodedText.html", "w")
+    file.write("<html>")
+    file.write("<head>")
+    file.write(Outpute)
+    file.write("</head>")
+    file.write("</html>")
+
+
 button2 = tk.Button(window, text="ENCODE", fg="Blue", font="Arial", padx=50, pady=3, command=ENCODEclicked)
 button2.grid(columnspan=12, column=0, row=2)
 
